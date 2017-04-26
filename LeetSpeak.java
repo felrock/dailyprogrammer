@@ -2,14 +2,14 @@ public class LeetSpeak {
 	
 	public static String toLeet(String s){
 		for(int i=0; i < alphabetLength; i++){
-			s = s.replace(norm[i], leet[i]).equals(s) ? s.toLowerCase() : s.replace(norm[i].toLowerCase(), leet[i]).toLowerCase();
+			 s = s.replace(norm[i], leet[i]).equals(s) ?s.replace(norm[i].toLowerCase(), leet[i]) : s.toLowerCase();
 		}
 		return s;
 	}
 
 	public static String toNorm(String s){
 		for(int i=0; i < alphabetLength; i++){
-			s = s.replace(leet[i], norm[i]).equals(s) ? s.toLowerCase() : s.replace(leet[i], norm[i].toLowerCase()).toLowerCase();
+			s = s.replace(leet[i], norm[i]).equals(s) ? s.toLowerCase() : s.replace(leet[i], norm[i].toLowerCase());
 		}
 		return s;
 	}
