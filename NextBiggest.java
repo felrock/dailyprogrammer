@@ -1,4 +1,4 @@
-
+/* Challenge #312 [Intermediate] Next largest number */
 import java.util.ArrayList;
 import java.util.Comparator;
 
