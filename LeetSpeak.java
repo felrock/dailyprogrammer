@@ -1,3 +1,5 @@
+/* Challenge #312 [Easy] L33tspeak Translator */
+
 public class LeetSpeak {
 	
 	public static String toLeet(String s){
