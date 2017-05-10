@@ -18,9 +18,8 @@
               zeros+="0";
           }
           splitNumbers.sort((o1, o2) -> {
-            return (o1 + o2).compareTo(o2 + o1);
+            return (o2 + o1).compareTo(o1+o2);
           });
-    
           for(String s : splitNumbers){
               if(splitNumbers.indexOf(s)==1)smallest = zeros + smallest;
               biggest = biggest + s;
