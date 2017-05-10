@@ -1,33 +1,33 @@
-/*
- *      [2017-05-08] Challenge #314 [Easy] Concatenated Integers
- * */
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
-public class ConCatInt {
-    public static void main(String args[]) {
-      Scanner scan = new Scanner(System.in);
-      String input = scan.nextLine();
-      scan.close();
-      String biggest = "", smallest = "";
-
-      List<String> splitNumbers = Arrays.asList(input.split(" "));
-
-      splitNumbers.sort((o1, o2) -> {
-        if(Integer.parseInt(o1 + o2) > Integer.parseInt(o2 + o1)){
-            return -1;
-        }else if(Integer.parseInt(o1 + o2) < Integer.parseInt(o2 + o1)){
-            return 1;
+    /*
+     * 		[2017-05-08] Challenge #314 [Easy] Concatenated Integers
+     * */
+    import java.util.Arrays;
+    import java.util.List;
+    import java.util.Scanner;
+    
+    public class ConCatInt {
+        public static void main(String args[]) {
+          Scanner scan = new Scanner(System.in);
+          String input = scan.nextLine();
+          scan.close();
+          String biggest = "", smallest = "",zeros="";
+    
+          List<String> splitNumbers = Arrays.asList(input.split(" "));
+          while(splitNumbers.contains("0")){
+              splitNumbers.remove("0");
+              zeros+="0";
+          }
+          splitNumbers.sort((o1, o2) -> {
+            return (o1 + o2).compareTo(o2 + o1);
+          });
+    
+          for(String s : splitNumbers){
+              if(splitNumbers.indexOf(s)==1)smallest = zeros + smallest;
+              biggest = biggest + s;
+              smallest = s + smallest;
+              if(splitNumbers.indexOf(s)==splitNumbers.size()-1)biggest = biggest + zeros;
+          }
+    
+          System.out.println(smallest + " " + biggest);
         }
-        return 0;
-      });
-
-      for(String s : splitNumbers){
-          biggest = biggest + s;
-          smallest = s + smallest;
-      }
-
-      System.out.println(smallest + " " + biggest);
     }
-}
