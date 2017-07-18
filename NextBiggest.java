@@ -14,7 +14,7 @@ public class NextBiggest {
             }    
 
         });
-        System.out.println(numbers.get(0));
+        System.out.println(numbers.get(1));
     }
     private static void bruteForce(String prefix, String str, int firstNum) {
         int n = str.length();
